@@ -1,78 +1,120 @@
-# ⚙️ GitCopy All in One
+# ⚙️ GitCopy – All in One
 
-![gitCopy Logo](./assets/gitcopy_logo_300x300.png)  
+![gitCopy Logo](./media/gitcopy_logo_300x300.png)
 
-> gitCopy ist nur ein Faulheits-Tool das ein zip-Archiv aus einem git-Repository erstellt um es z.B einer KI zu übergeben.
+[![Lizenz: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Plattform: Windows](https://img.shields.io/badge/platform-Windows%2010%2F11-blue.svg)](#voraussetzungen)
+[![Status: Stable](https://img.shields.io/badge/status-stable-brightgreen.svg)](#)
+
+> **GitCopy** ist ein minimalistisches CLI-Tool, das ein ZIP-Archiv aus dem aktuellen Stand eines Git-Repositories erstellt – optimiert für schnelle Übergaben, Archivierungen und Analysen.
 
 ---
 
-## ➖ Inhaltsverzeichnis
+## 📑 Inhaltsverzeichnis
 
-- [⚙️ GitCopy All in One](#️-gitcopy-all-in-one)
-  - [➖ Inhaltsverzeichnis](#-inhaltsverzeichnis)
-  - [➖ Über das Projekt](#-über-das-projekt)
-  - [➖ Struktur](#-struktur)
-  - [⚙️ Installation - Verwendung](#️-installation---verwendung)
-  - [➖ Beitragende](#-beitragende)
+- [⚙️ GitCopy – All in One](#️-gitcopy--all-in-one)
+  - [📑 Inhaltsverzeichnis](#-inhaltsverzeichnis)
+  - [💬 Über das Projekt](#-über-das-projekt)
+  - [🔧 Voraussetzungen](#-voraussetzungen)
+  - [📦 Projektstruktur](#-projektstruktur)
+  - [⚙️ Installation \& Verwendung](#️-installation--verwendung)
+    - [Optionale Parameter:](#optionale-parameter)
+  - [🤝 Beitragende](#-beitragende)
   - [⚠️ Lizenz](#️-lizenz)
-  - [➖ Hinweise](#-hinweise)
+  - [💡 Hinweise](#-hinweise)
 
 ---
 
-## ➖ Über das Projekt
+## 💬 Über das Projekt
 
-Ein Überblick, was das Projekt tut, warum es existiert und für wen es gedacht ist.
+**GitCopy** richtet sich an alle, die schnell und unkompliziert den aktuellen Stand eines Git-Repositories als saubere ZIP-Datei exportieren möchten.  
+Typische Anwendungsfälle:
+- Übergabe von Projektständen an KIs oder externe Systeme
+- Archivierung von Quellcodes ohne Git-Historie
+- Erstellung sauberer, analysierbarer Snapshots
 
-- 
-
-- Was ist das Ziel?
-
-
-- Wer soll das nutzen oder lesen?
-
-
-- Wo kommt es her / wie kam es dazu?
+Das Ziel ist ein robuster, schlanker Prozess ohne zusätzliche Abhängigkeiten oder komplexe Konfiguration.
 
 ---
 
-## ➖ Struktur
+## 🔧 Voraussetzungen
 
-Beschreibt den Aufbau deines Projekts (Verzeichnisse, Dateien, Formatierungskonventionen, …)
+- **Betriebssystem:** Windows 10 oder höher
+- **Installiertes Git:**  
+  Git muss auf dem System verfügbar sein (`git` im Pfad).  
+  [Git Download-Seite](https://git-scm.com/download/win)
+- **Konsole:**  
+  Standard `cmd.exe`, Windows Terminal oder kompatible Umgebungen (z. B. PowerShell).
+
+Hinweis:  
+Das Skript berücksichtigt `.gitignore` automatisch – nur Dateien, die von Git tatsächlich verfolgt werden, landen im ZIP.
+
+---
+
+## 📦 Projektstruktur
+
+Projektdateien und Verzeichnisse:
 
 ```cmd
 .
-├── assets/               # irrelevanter Balast wie icons und Logos  
-├── gitcopy.bat           # Skript  
-├── README.md             # Diese Datei  
-└── LICENSE               # Lizenztext  
+📁 gitcopy/                          # Projektverzeichnis
+├── 📁 assets                        # Medien und Icons
+│   ├── 📄 gitcopy-original.png      # Originalgrafik
+│   ├── 📄 gitcopy_icon.ico          # Icon für Windows-Verknüpfungen
+│   └── 📄 gitcopy_logo_300x300.png  # Logo für Dokumentationen
+├── 📄 .gitignore                    # Ausschlussdatei für Git
+├── 📄 LICENSE                       # Lizenzinformation (MIT)
+├── 📄 README.md                     # Diese Dokumentation
+├── 📄 VERSION                       # Aktuelle Versionsnummer
+├── 📄 gitcopy.bat                   # Hauptskript
 ```
 
 ---
 
-## ⚙️ Installation - Verwendung
+## ⚙️ Installation & Verwendung
 
-- gitcopy.git in das Arbeitsverzeichnis kopieren und ausführen
+1. Repository klonen oder `gitcopy.bat` in ein beliebiges Arbeitsverzeichnis kopieren.
+2. Konsole öffnen und das Skript ausführen:
+
+```cmd
+gitcopy.bat
+```
+
+### Optionale Parameter:
+
+| Parameter      | Beschreibung |
+|----------------|---------------|
+| `-d`, `--debug` | Aktiviert den Debug-Modus (prüft nicht auf uncommitted Änderungen) |
+| `-h`, `--help`  | Zeigt eine Hilfeseite an |
+
+Beispiel:
+
+```cmd
+gitcopy.bat --debug
+```
 
 ---
 
-## ➖ Beitragende
+## 🤝 Beitragende
 
-Liste der Autor:innen, Unterstützer:innen oder Reviewer:
+- [@realAscot](https://github.com/realAscot) – Idee, Konzept und Umsetzung
 
-- [@realAscot](https://github.com/realAscot) – Idee, Konzept, Umsetzung
-- Du? Mach gern mit! 😊
+Beiträge und Verbesserungsvorschläge sind jederzeit willkommen!
 
 ---
 
 ## ⚠️ Lizenz
 
 Dieses Projekt steht unter der **MIT-Lizenz**.  
-Details siehe [LICENSE](LICENSE).
+Details findest du in der Datei [LICENSE](LICENSE).
 
 ---
 
-## ➖ Hinweise
+## 💡 Hinweise
 
-- aktuell keine
+- Das ZIP-Archiv enthält **nur** Dateien, die von Git getrackt werden.  
+  Dateien, die in `.gitignore` ausgeschlossen sind, werden **nicht** mit aufgenommen.
+- Nicht committed oder nicht getrackte Änderungen werden in der Standardkonfiguration geprüft.
+- Im Debug-Modus (`--debug`) werden offene Änderungen ignoriert.
 
 ---
