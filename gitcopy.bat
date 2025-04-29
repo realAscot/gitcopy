@@ -6,7 +6,7 @@ REM Skript, um aus einem Projekt mit git-repo, ein portables .zip zu erstellen
 REM 
 REM (C) 2025 MIT Adam Skotarczak 
 REM
-REM Version: v1.0.0
+REM Version: v1.1.1
 REM Github: https://github.com/realAscot/gitcopy
 REM -------------------------------------------------------------------
 
@@ -17,6 +17,7 @@ if errorlevel 1 (
     echo.
     echo [⚠️] Git ist nicht installiert oder nicht im PATH.
     echo [📦] Bitte installiere Git von https://git-scm.com/download/win
+    call :show_help
     echo.
     exit /b 1
 )
